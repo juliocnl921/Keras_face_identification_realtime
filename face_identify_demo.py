@@ -11,6 +11,7 @@ import cv2
 import os
 import glob
 import pickle
+import time
 
 
 def load_stuff(filename):
@@ -104,7 +105,7 @@ class FaceIdentify(object):
         # infinite loop, break by key ESC
         while True:
             if not video_capture.isOpened():
-                sleep(5)
+                time.sleep(5)
             # Capture frame-by-frame
             ret, frame = video_capture.read()
             gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
